@@ -22,6 +22,9 @@ const SingleDiv = ({ title, name, phap, image }) => {
         <h3 className="text-sm font-semibold mt-2   capitalize">{title}</h3>
         <p className="text-gray-700 text-sm">{phap}</p>
       </div>
+
+      {/* icons div  */}
+
       <div className="flex justify-between p-2 items-center ">
         <div className="h-[20px] w-[20px] rounded-full bg-green-600 "></div>
         <div className="text-gray-700">
@@ -35,6 +38,8 @@ const SingleDiv = ({ title, name, phap, image }) => {
           <FaHeart className="text-gray-500 " />
         </div>
       </div>
+
+      {/* end */}
     </div>
   );
 };
