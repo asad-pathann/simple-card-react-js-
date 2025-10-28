@@ -1,26 +1,26 @@
 import React, { useState } from "react";
 
 const ChangeTitle = () => {
-  const [title, setitle] = useState("this is a title");
-
-  const handleCLick = () => {
-    if (title === "this is a title") {
-      setitle("this is new title");
+  const [chanage, setchange] = useState("this is title");
+  const handleChage = () => {
+    if (chanage == "this is title") {
+      setchange("this is new title");
     } else {
-      setitle("this is a title");
+      setchange("this is title");
     }
   };
-  console.log(title);
   return (
     <>
-      <div className="container mx-auto text-center">
-        <h1 className="text-center text-xl text-green-700">{title} </h1>
+      <div className="container mb-10 text-center ">
+        <h3 className="text-4xl text-gradient-to-r from-gray-300 to-pink-500">
+          {chanage}
+        </h3>
 
         <button
-          onClick={handleCLick}
-          className="bg-green-800 rounded-md text-white  outline-0  px-4 py-2  active:scale-95"
+          onClick={handleChage}
+          className="bg-purple-700 my-3  text-white px-5 py-2 rounded-md "
         >
-          change
+          Change Title
         </button>
       </div>
     </>

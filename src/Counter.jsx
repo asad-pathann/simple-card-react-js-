@@ -3,38 +3,53 @@ import React, { useState } from "react";
 const Counter = () => {
   const [count, setcount] = useState(0);
 
-  const handleCLick = (e) => {
-    console.log(e.target.innerText);
-    if (e.target.innerText == "incarese") {
+  const [textColor, settextColor] = useState("text-gray-500");
+  const [bgColor, setbgColor] = useState("text-gray-500");
+
+  const handleCount = (e) => {
+    let TitleText = e.target.innerText;
+    if (TitleText == "Increase") {
       setcount(count + 1);
-    } else if (e.target.innerText == "Reset") {
+      settextColor("text-green-800");
+      setbgColor("bg-pink-800");
+    } else if (TitleText == "Reset") {
       setcount(0);
+      settextColor("text-red-900");
+      setbgColor("bg-purple-900");
     } else {
       setcount(count - 1);
+      settextColor("text-blue-900");
+      setbgColor("bg-red-900");
     }
   };
   return (
     <>
-      <div className="container text-center">
-        <h1 className="text-9xl ">{count}</h1>
-        <div className="  flex   justify-center text-center items-center gap-5 mx-auto  ">
+      <div
+        className={`container text-center  ${bgColor} transition-all duration-300  h-[700px] mx-auto`}
+      >
+        <h1
+          className={`text-9xl text-gradient-to-r from-gray-300 to-pink-600 ${textColor}`}
+        >
+          {count}
+        </h1>
+        <div className="flex justify-center gap-3 items-center">
           <button
-            onClick={handleCLick}
-            className="bg-gradient-to-l block  mx-3  text-green-700  rounded-md  px-4 py-1   from-red-500 to-blue-500"
+            onClick={handleCount}
+            className="bg-gradient-to-r from-purple-500 to-pink-500 to-gray-800 px-4 py-1 rounded-md outline-0"
           >
-            incarese
+            Increase
           </button>
           <button
-            onClick={handleCLick}
-            className=" bg-gradient-to-r from-pink-500 to-red-500 px-5 py-1 rounded-md  active:hover:bg-pink-100 block"
+            onClick={handleCount}
+            className="bg-gradient-to-r from-purple-500 to-pink-500 to-gray-800 px-4 py-1 rounded-md outline-0"
           >
             Reset
           </button>
           <button
-            onClick={handleCLick}
-            className="block bg-purple-900 px-7 py-1 rounded-md  hover:bg-purple-400"
+            onClick={handleCount}
+            className="bg-gradient-to-r from-purple-500 to-pink-500 to-gray-800 px-4 py-1 rounded-md outline-0"
           >
-            dicrease
+            Decrese
           </button>
         </div>
       </div>
